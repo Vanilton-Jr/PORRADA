@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- red container -->
+    <div id="container">
+        <div id="header">
+            <!-- player health -->
+            <div id="player_container" class="health_container">
+                <!-- enemy health -->
+                <div class="health_bar"></div>
+                <div id="player_health" class="health_content"></div>
+            </div>
+            <!-- timer -->
+            <div id="timer">10</div>
+
+            <div id="enemy_container" class="health_container">
+                <!-- enemy health -->
+                <div  class="health_bar"></div>
+                <div id="enemy_health" class="health_content"></div>
+            </div>
+            
+        </div>
+
+        <div id="tie">TIE</div>
+        <canvas id="canvas">No Canvas?</canvas>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/classes.js"></script>
+<script src="js/utils.js"></script>
+<script src="main.js"></script>
+
+</html>
