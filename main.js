@@ -214,13 +214,13 @@ function animate() {
         player.isAttacking && player.framesCurrent === 4) {
         player.isAttacking = false;
         enemy.takeHit(dano1)
-        gsap.to('#enemy_health', {width: player.health + '%'})
+        document.querySelector("#enemy_health").style.width = enemy.health + '%'
     }
     if (rectangularCollision({ rectangle1: enemy, rectangle2: player }) &&
         enemy.isAttacking && enemy.framesCurrent === 2) {
         enemy.isAttacking = false
         player.takeHit(dano2)
-        gsap.to('#player_health', {width: player.health + '%'})
+        document.querySelector("#player_health").style.width = player.health + '%'
     }
     //if player misses
     if (player.isAttaking && player.framesCurrent === 4) {
