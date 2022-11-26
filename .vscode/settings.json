@@ -5,7 +5,12 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true
+        "**/Thumbs.db": true,
+        "README.md": true,
+        "style.css": true
     },
-    "hide-files.files": []
+    "hide-files.files": [
+        "README.md",
+        "style.css"
+    ]
 }

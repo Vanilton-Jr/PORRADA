@@ -13,8 +13,8 @@ body {
 #canvas {
     border: 1px solid black;
     background-color: rgb(255, 255, 255);
-    width: 104%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
 }
 
 .health_bar {
@@ -26,14 +26,13 @@ body {
 .health_container {
     width: 100%;
     position: relative;
-   display: flex;
-   justify-content: flex-end;
-   border: 4px solid white;
+    display: flex;
+    justify-content: flex-end;
+    border: 4px solid white;
 }
 
-.health_content{
+.health_content {
     transition: 0s;
-
 }
 
 #player_health {
@@ -50,12 +49,12 @@ body {
 
 #enemy_health {
     position: absolute;
-    background-color:rgb(89, 89, 212);
+    background-color: rgb(89, 89, 212);
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100%; 
+    width: 100%;
     border-left: none;
     border-right: none;
 }
@@ -64,7 +63,10 @@ body {
 #container {
     position: relative;
     display: inline-block;
-   border-bottom: 2px solid white!important;
+    border-bottom: 2px solid white !important;
+    width: 100%;
+    height: 100%;
+    margin-top: -.3vw;
 
 }
 
@@ -74,6 +76,7 @@ body {
     width: 100%;
     align-items: center;
     padding: 20px;
+    visibility: hidden;
 }
 
 #timer {
@@ -87,14 +90,158 @@ body {
 }
 
 
-#tie{
+#tie {
     position: absolute;
     display: flex;
     align-items: center;
-    justify-content: center ;
-    top: 0;
+    justify-content: center;
+    top: -17vw;
     left: 0;
     right: 0;
     bottom: 0;
-    display: none;
+    visibility: hidden;
+    display: flex;
+    transform: scale(1.5);
+}
+
+#restart_area {
+    position: absolute;
+    width: 500px;
+    height: 220px;
+    background-color: yellow;
+    align-items: center;
+    justify-content: center;
+    top: 15vw;
+    left: 33vw;
+    visibility: hidden;
+    display: flex;
+}
+
+#restart{
+    background-color: aqua;
+    box-shadow: 4px 3px rgb(255, 31, 68);
+    cursor:pointer;
+    z-index: 2;
+    margin-top: 6vw;
+   
+}
+
+#restart:hover{
+    background-color: rgb(255, 31, 68);
+    box-shadow: 4px 3px aqua;
+    transform: scale(1.2);
+    color: aliceblue;
+    cursor:pointer;
+    transition: 0.3s;
+}
+
+
+/* SELECIONAR PERSSONAGENS */
+
+#Personagens{
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+}
+
+#character_colection{
+    position: absolute;
+    background-color: rgb(85, 31, 31);
+    border: 10px double black;
+    width: 40vw;
+    height: 80%;
+    left: 29vw;
+    top: .5vw;
+    display: inline-flex;  
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.character{
+    position: relative;
+    background-color: gray;
+    border: 5px double black;
+    width: 7vw;
+    height: 7vw;
+}
+
+.rosto{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.rosto:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 1px aliceblue;
+    z-index: 5;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.curtina{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(28, 37, 65);
+    border-top: 540px solid rgb(228, 47, 68);
+    border-left:750px solid rgb(228, 47, 68);
+    border-right: 700px solid rgb(28, 37, 65);
+    border-bottom: 310px solid rgb(28, 37, 65);
+}
+
+.holofote{
+    position: absolute;
+    border: 1px solid black;
+    height: 100%;
+    width: 29vw;
+}
+
+#holofote2{
+    right: 0;
+}
+.holofote_img{
+    position: absolute;
+    left: 12vw;
+    top: 10vw;
+    transform: scale(5);
+}
+
+#holofote_img2{
+    top: 20vw;
+}
+
+.holofote_label{
+    position: absolute;
+    font-size: xx-large;
+    bottom: 13vw;
+    color: aliceblue;
+    /* background-color: rgb(155, 147, 136); */
+    width: 100%;
+    text-align: center;
+}
+
+#start{
+    position: absolute;
+    background-color: red;
+    width: 20vw;
+    height: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    bottom: 3.5vw;
+    left: 39vw;
+}
+
+#start:hover{
+    scale: 1.2;
+    bottom: 4.2vw;
+    box-shadow: 0px 1px 15px 1px rgb(255, 54, 54);
+    color: aliceblue;
+    cursor: pointer;
+    transition: 0.1s;
 }

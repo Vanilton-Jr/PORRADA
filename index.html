@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Document</title>
 </head>
 
@@ -20,23 +20,50 @@
                 <div id="player_health" class="health_content"></div>
             </div>
             <!-- timer -->
-            <div id="timer">10</div>
+            <div id="timer" onclick="derteminarJogador(`Kenji`, KenjiSprites)">10</div>
 
             <div id="enemy_container" class="health_container">
                 <!-- enemy health -->
-                <div  class="health_bar"></div>
+                <div class="health_bar"></div>
                 <div id="enemy_health" class="health_content"></div>
             </div>
-            
         </div>
 
+        <div id="restart_area">
+            <div id="restart" onclick="restart()">REVANCHE</div>
+        </div>
         <div id="tie">TIE</div>
+
+
+        <div id="Personagens">
+            <div class="curtina"></div>
+
+
+            <div id="holofote1" class="holofote">
+                <img  src="img/perfils/samuraiMack_rosto.png" id="holofote_img1" class="holofote_img"  alt=""></img >
+                <div id="holofote_label1" class="holofote_label">Samurai Mack</div>
+            </div>
+
+            <div id="character_colection">
+                <div id="play1C" class="character" ondblclick="console.log(player)"><img src="img/perfils/samuraiMack_rosto.png" id="rosto1" class="rosto"></div>
+                <div id="play2C" class="character" onclick="derteminarJogador(`Kenji`, KenjiSprites)"><img src="img/perfils/kenji_rosto.png" id="rosto1" class="rosto"></div>
+            </div>
+
+            <div id="holofote2" class="holofote">
+                <img src="img/perfils/kenji_rosto.png" id="holofote_img2" class="holofote_img"></img>
+                <div id="holofote_label2" class="holofote_label">Kenji</div>
+            </div>
+
+            <div id="start" onclick="start()">PORRADA!</div>
+        </div>
+        
         <canvas id="canvas">No Canvas?</canvas>
     </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/classes.js"></script>
-<script src="js/utils.js"></script>
-<script src="main.js"></script>
+<!-- <script src="js/characterSelector.js"></script> -->
+<script src="./js/controls.js"></script>
+<script src="./js/classes.js"></script>
+<script src="./js/utils.js"></script>
+<script src="./js/main.js"></script>
 
 </html>

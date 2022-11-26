@@ -10,14 +10,24 @@ const dano1 =10
 const dano2 = 5
 let timer = 60
 
+var player1 = 'samuraiMack'
+var player2 = 'Kenji'
 
+// function derteminarJogador(jogador){
+//     player1 = jogador;
+//     console.log(player1 + 'pesto')
+// }
+
+function teste(){
+    window.alert(player1)
+}
 
 const background = new Sprite({
     position: {
         x: 0,
         y: 0
     },
-    imgSrc: './img/background.png',
+    imgSrc: `./img/background.png`,
     scale: 1
 })
 
@@ -26,15 +36,15 @@ const shop = new Sprite({
         x: 600,
         y: 128
     },
-    imgSrc: './img/shop.png',
+    imgSrc: `./img/shop.png`,
     scale: 2.75,
     framesMax: 6
 })
 
-const player = new Fighter({
+var player = new Fighter({
     position: { x: 0, y: 0 },
     velocity: { x: 0, y: 10 },
-    imgSrc: './img/samuraiMack/Idle.png',
+    imgSrc: `./img/${player1}/Idle.png`,
     framesMax: 8,
     scale: 2.5,
     offset: {
@@ -43,31 +53,31 @@ const player = new Fighter({
     },
     sprites: {
         idle: {
-            imgSrc: './img/samuraiMack/Idle.png',
+            imgSrc: `./img/${player1}/Idle.png`,
             framesMax: 8,
         },
         run: {
-            imgSrc: './img/samuraiMack/Run.png',
+            imgSrc: `./img/${player1}/Run.png`,
             framesMax: 8,
         },
         jump: {
-            imgSrc: './img/samuraiMack/Jump.png',
+            imgSrc: `./img/${player1}/Jump.png`,
             framesMax: 2,
         },
         fall: {
-            imgSrc: './img/samuraiMack/fall.png',
+            imgSrc: `./img/${player1}/fall.png`,
             framesMax: 2,
         },
         attack1: {
-            imgSrc: './img/samuraiMack/Attack1.png',
+            imgSrc: `./img/${player1}/Attack1.png`,
             framesMax: 6,
         },
         takeHit: {
-            imgSrc: './img/samuraiMack/Take Hit - white silhouette.png',
+            imgSrc: `./img/${player1}/Take Hit - white silhouette.png`,
             framesMax: 4,
         },
         death: {
-            imgSrc: './img/samuraiMack/Death.png',
+            imgSrc: `./img/${player1}/Death.png`,
             framesMax: 6,
         }
     },
@@ -87,7 +97,7 @@ const enemy = new Fighter({
         x: -50,
         y: 0
     },
-    imgSrc: './img/Kenji/Idle.png',
+    imgSrc: `./img/${player2}/Idle.png`,
     framesMax: 4,
     scale: 2.3,
     offset: {
@@ -96,31 +106,31 @@ const enemy = new Fighter({
     },
     sprites: {
         idle: {
-            imgSrc: './img/Kenji/Idle.png',
+            imgSrc: `./img/${player2}/Idle.png`,
             framesMax: 4,
         },
         run: {
-            imgSrc: './img/Kenji/Run.png',
+            imgSrc: `./img/${player2}/Run.png`,
             framesMax: 8,
         },
         jump: {
-            imgSrc: './img/Kenji/Jump.png',
+            imgSrc: `./img/${player2}/Jump.png`,
             framesMax: 2,
         },
         fall: {
-            imgSrc: './img/Kenji/fall.png',
+            imgSrc: `./img/${player2}/fall.png`,
             framesMax: 2,
         },
         attack1: {
-            imgSrc: './img/Kenji/Attack1.png',
+            imgSrc: `./img/${player2}/Attack1.png`,
             framesMax: 4,
         },
         takeHit: {
-            imgSrc: './img/Kenji/Take Hit.png',
+            imgSrc: `./img/${player2}/Take Hit.png`,
             framesMax: 3,
         },
         death: {
-            imgSrc: './img/Kenji/Death.png',
+            imgSrc: `./img/${player2}/Death.png`,
             framesMax: 7,
         }
     },
@@ -147,12 +157,13 @@ const keys = {
     }
 }
 
+var relogio_chave = 0;
 
-
-decreaseTimer()
-
-function animate() {
-    window.requestAnimationFrame(animate)
+function start() {
+    document.getElementById("header").style.visibility = 'visible';
+    document.getElementById("Personagens").style.visibility = 'hidden';
+    relogio_chave = 1;
+    window.requestAnimationFrame(start)
     c.clearRect(0, 0, canvas.width, canvas.height)
     background.update()
     shop.update()
@@ -160,10 +171,11 @@ function animate() {
     c.fillRect(0, 0, canvas.width, canvas.height)
     player.update();
     enemy.update();
-
+    
     player.velocity.x = 0
     enemy.velocity.x = 0
 
+    console.log(player1)
 
 
     //player movement
@@ -238,7 +250,14 @@ function animate() {
     
 }
 
-animate()
+if(relogio_chave >= 1){
+    decreaseTimer()
+}
+function restart(){
+    location.reload()
+}
+
+// start()
 
 //movimentos -----------------------------------------------------------------------------------------
 
